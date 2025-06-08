@@ -22,23 +22,46 @@
     display: flex;
     flex-direction: column;
     margin-top: 50px;
-    margin-left: 50px;
+    margin-left: 80px;
+}
+.iconosControladores {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
 }
 .iconoJuegoPlay {
-    font-size: 40px; /* tamaño de los iconos */
-    color: black;    /* o el color que prefieras */
+    font-size: 30px; /* tamaño de los iconos */
+    color: #3B8258;    /* o el color que prefieras */
     cursor: pointer;
+    background-color: black;
+    width: 50px;
+    text-align: center;
+    border: 3px solid #505050;
 }
 .iconoJuegoStop {
-    font-size: 40px; /* tamaño de los iconos */
-    color: black;    /* o el color que prefieras */
+    font-size: 30px; /* tamaño de los iconos */
+    color: #BB3727;    /* o el color que prefieras */
     cursor: pointer;
+    background-color: black;
+    width: 50px;
+    text-align: center;
+    border: 3px solid #505050;
 }
-.contadorJuego{
-    background-color:black;
+.contadorJuego {
+    background-color: black;
     border: 6px solid #505050;
     height: 60px;
     width: 180px;
+    color: #BB3727;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px; /* puedes ajustar el tamaño según prefieras */
 }
 
 .ojosAbiertos{
@@ -49,12 +72,10 @@
 .botones {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-    gap: 16px;
+    justify-content: center;
+    align-items: center;
     height: 100%;
-    margin-top: 50px;
-    margin-right: 50px;
+    margin-right: 80px;
 }
 
 .iconosJuego {
@@ -99,4 +120,34 @@
 .zonaJuego {
     flex-grow: 1;
     background-color: #F2D6B0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 30px;
+    padding: 20px;
+}
+
+.player-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.player-circle.eliminado:not(.jugador-real) {
+    background-color: red !important;
+}
+
+.player-circle.jugador-real:not(.eliminado) {
+    background-color: #1E90FF
+    ; /* naranja para el jugador real */
+}
+
+.player-circle:not(.jugador-real):not(.eliminado) {
+    background-color: green; /* verde para los bots normales */
+}
+
+.jugador-real.eliminado {
+    background-color: #8B0000; /* o cualquier color que quieras para mostrar que está eliminado */
 }

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/logoRedimensionado.png';
-import cancionInicio from '../../assets/cancionInicio.mp3';
 import './styles/startScreen.css';
 
 const StartScreen = () => {
@@ -19,7 +18,7 @@ const StartScreen = () => {
   const handleStartGame = () => {
     setGameMode(true);
     console.log('Juego empezado');
-    navigate('/game');
+    navigate('/game', { state: { playerCount } });
   };
 
   const handleSelectClick = () => {
@@ -35,7 +34,7 @@ const StartScreen = () => {
 
   return (
     <div className='backgroundScreen'>
-        <audio id="start-audio" src={cancionInicio} loop muted />
+        <audio id="start-audio" src="/audio/cancionInicio.mp3" preload="auto" />
         <img src={logo} alt="Logo del juego" className="logo" />
         <div className="mainTitle">LUZ ROJA, LUZ VERDE</div>
         <select value={playerCount} onChange={handlePlayerCountChange} onClick={handleSelectClick}>
@@ -43,6 +42,8 @@ const StartScreen = () => {
           <option value="10">10 jugadores</option>
           <option value="15">15 jugadores</option>
           <option value="20">20 jugadores</option>
+          <option value="25">25 jugadores</option>
+          <option value="30">30 jugadores</option>
         </select>
         <button className="startButton" onClick={handleStartGame}>COMENZAR PARTIDA</button>
     </div>
