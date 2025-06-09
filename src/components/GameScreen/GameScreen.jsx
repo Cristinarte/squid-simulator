@@ -47,7 +47,7 @@ const GameScreen = () => {
         if (isRunning) return;
 
         setIsRunning(true);
-        const nuevoAudio = new Audio("/audio/jugaremos.mp3");
+        const nuevoAudio = new Audio(`${import.meta.env.BASE_URL}audio/jugaremos.mp3`);
         nuevoAudio.loop = true;
         nuevoAudio.play();
         setAudio(nuevoAudio);

@@ -34,7 +34,7 @@ const StartScreen = () => {
 
   return (
     <div className='backgroundScreen'>
-        <audio id="start-audio" src="/audio/cancionInicio.mp3" preload="auto" />
+        <audio id="start-audio" src={import.meta.env.BASE_URL + "audio/cancionInicio.mp3"} preload="auto" />
         <img src={logo} alt="Logo del juego" className="logo" />
         <div className="mainTitle">LUZ ROJA, LUZ VERDE</div>
         <select value={playerCount} onChange={handlePlayerCountChange} onClick={handleSelectClick}>
